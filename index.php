@@ -1,3 +1,9 @@
+<?php
+
+require './function.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,33 +12,25 @@
     <title>Document</title>
 </head>
 <body>
-
-<?php
-
-    function password_generator($length) {
-
-        $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-
-
-        for($i = 0; $i < $length; $i++ ) {
-
-            $password .= $letters[random_int(0, strlen($letters) - 1)];
-            
-        }
-
-        echo $password;
-
-    }
-
-?>
     
-<form action="">
+<form>
     <input type="number" name="length">
+    <label for="uppers">Lettere maiuscole</label>
+    <input type="checkbox" name="uppers" value="true">
+    <label for="uppers">Numeri</label>
+    <input type="checkbox" name="numbers" value="true">
+    <label for="uppers">Caratteri speciali</label>
+    <input type="checkbox" name="symbols" value="true">
     <button type="submit">Invia</button>
 </form>
 
-<?php password_generator($_GET['length']) ?>
+<?php password_generator($_GET["length"], $_GET["uppers"], $_GET["numbers"], $_GET["symbols"]); ?>
+
+<?php if (isset($_SESSION["password"])) {
+
+    header("Location: result.php");
+
+} ?>
 
 </body>
 </html>
