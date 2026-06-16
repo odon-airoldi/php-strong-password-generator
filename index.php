@@ -14,13 +14,22 @@ require './function.php';
 <body>
     
 <form>
-    <input type="number" name="length">
-    <label for="uppers">Lettere maiuscole</label>
-    <input type="checkbox" name="uppers" value="true">
-    <label for="uppers">Numeri</label>
-    <input type="checkbox" name="numbers" value="true">
-    <label for="uppers">Caratteri speciali</label>
-    <input type="checkbox" name="symbols" value="true">
+    <div>
+        <label for="uppers">Lunghezza password</label><br>
+        <input type="number" name="length">
+    </div>
+    <div>
+        <input type="checkbox" id="uppers" name="uppers" value="true">
+        <label for="uppers">Lettere maiuscole</label>
+    </div>
+    <div>
+        <input type="checkbox" id="numbers" name="numbers" value="true">
+        <label for="numbers">Numeri</label>
+    </div>
+    <div>
+        <input type="checkbox" id="symbols" name="symbols" value="true">
+        <label for="symbols">Caratteri speciali</label>
+    </div>
     <button type="submit">Invia</button>
 </form>
 
