@@ -2,6 +2,8 @@
 
 require './function.php';
 
+var_dump($_SESSION["password"]);
+
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +16,7 @@ require './function.php';
 <body>
 
 <?php echo $_SESSION["password"]; ?>
+
     
 </body>
 </html>

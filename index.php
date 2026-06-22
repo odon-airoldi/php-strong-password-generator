@@ -12,7 +12,20 @@ require './function.php';
     <title>Document</title>
 </head>
 <body>
+
+<?php
+
+
+    if(isset($_GET["length"])) {
+
+        password_generator($_GET["length"], $_GET["uppers"], $_GET["numbers"], $_GET["symbols"]);
+
+        header("Location: result.php");
+
+    }
     
+?>
+
 <form>
     <div>
         <label for="uppers">Lunghezza password</label><br>
@@ -32,14 +45,6 @@ require './function.php';
     </div>
     <button type="submit">Invia</button>
 </form>
-
-<?php password_generator($_GET["length"], $_GET["uppers"], $_GET["numbers"], $_GET["symbols"]); ?>
-
-<?php if (isset($_SESSION["password"])) {
-
-    header("Location: result.php");
-
-} ?>
 
 </body>
 </html>

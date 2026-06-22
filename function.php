@@ -8,18 +8,18 @@
         $uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $numbers = "0123456789";
         $symbols = "!@#$%^&*()-_+=";
-
         $set = [$lowers];
+        $password = "";
 
-        if (isset($_GET["uppers"])) {
+        if ($psw_uppers) {
             $set[] = $uppers;
         }
 
-        if (isset($_GET["numbers"])) {
+        if ($psw_numbers) {
             $set[] = $numbers;
         }
 
-        if (isset($_GET["symbols"])) {
+        if ($psw_symbols) {
             $set[] = $symbols;
         }
 
